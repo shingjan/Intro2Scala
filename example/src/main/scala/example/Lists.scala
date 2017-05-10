@@ -45,11 +45,25 @@ object Lists {
    */
     def max(xs: List[Int]): Int = {
 
-      def loop(ys: List[Int], max: Int): Int = ys match {
-        case head :: tail => loop(tail, if(head > max) head else max)
-        case Nil => max
+      def loop(ys: List[Int], max: Int): Int = {
+        ys match {
+          case head :: tail => loop (tail, if (head > max) head else max)
+          case Nil => max
+        }
       }
       loop(xs, Int.MinValue)
+    }
+
+
+    def patternMatch1(x: Int): String = x match{
+      case 1 => "one"
+      case 2 => "two"
+      case 3 => "three"
+      case _ => "many"
+    }
+
+    def main(args: Array[String]): Unit = {
+    println(patternMatch1(3))
     }
 
   }
