@@ -19,8 +19,10 @@ object FunSets {
   /**
    * Returns the set of the one given element.
    */
-    def singletonSet(elem: Int): Set = ???
-  
+    def singletonSet(elem: Int): Set = {
+      return Set(elem)
+    }
+
 
   /**
    * Returns the union of the two given sets,

@@ -13,7 +13,9 @@ object Main {
   /**
    * Exercise 1
    */
-    def pascal(c: Int, r: Int): Int = ???
+    def pascal(c: Int, r: Int): Int = {
+
+    }
   
   /**
    * Exercise 2
