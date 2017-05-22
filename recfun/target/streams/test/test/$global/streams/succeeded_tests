@@ -1,4 +1,5 @@
 #Successful Tests
-#Mon May 22 14:19:04 CST 2017
-recfun.PascalSuite=1495433944789
-recfun.BalanceSuite=1495433944791
+#Mon May 22 14:37:45 CST 2017
+recfun.PascalSuite=1495435065380
+recfun.BalanceSuite=1495435065382
+recfun.CountChangeSuite=1495435065384
