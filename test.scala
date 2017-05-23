@@ -7,6 +7,9 @@ object Main extends App {
 	val up = new Upper
 	//println(up.upper("A", "First", "Scala", "Program"))
 	println(up.sum(x => x * x, 3, 5))
+	println(up.sum2(x => x * x)(3,5))
+	println(up.sum3(x => x * x)(3,5))
+	println(up.product(x => x * x)(3,4))
 }
 
 class Upper{
@@ -21,6 +24,24 @@ class Upper{
 			else loop(a+1, f(a) + acc)
 		}
 		loop(a, 0)
+	}
+
+	def sum2(f: Int => Int): (Int, Int) => Int = {
+		def loop(a: Int, b: Int): Int ={
+			if(a > b) 0
+			else f(a) + loop(a + 1, b)
+		}
+		loop
+	}
+
+	def sum3(f: Int => Int)(a: Int, b: Int): Int = {
+		if(a > b) 0
+		else f(a) + sum3(f)(a+1, b)
+	}
+
+	def product(f: Int => Int)(a: Int, b: Int): Int = {
+		if(a > b) 1
+		else f(a) * product(f)(a+1, b)
 	}
 
 
