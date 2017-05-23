@@ -5,8 +5,8 @@ object Main extends App {
 	//println(capital("France"))
 
 	val up = new Upper
-	println(up.upper("A", "First", "Scala", "Program"))
-	println(up.add(1,2))
+	//println(up.upper("A", "First", "Scala", "Program"))
+	println(up.sum(x => x * x, 3, 5))
 }
 
 class Upper{
@@ -15,11 +15,13 @@ class Upper{
 
 	def add(int1: Int, int2: Int): Int = int1 + int2
 
-	def sum(f: Int => Int)(a: Int, b: Int):Int = {
-		def loop(a: Int, b: Int): Int ={
-			if(a > b) 0
-			else loop(a+1, b)
+	def sum(f: Int => Int, a: Int, b: Int) = {
+		def loop(a: Int, acc: Int): Int ={
+			if(a > b) acc
+			else loop(a+1, f(a) + acc)
 		}
-		loop(a, b)
+		loop(a, 0)
 	}
+
+
 }
