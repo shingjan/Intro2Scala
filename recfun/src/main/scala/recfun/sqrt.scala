@@ -1,7 +1,7 @@
 package recfun
 
 object sqrt{
-  def abs(x: Double) = if (x < 0) -x else x
+  def abs(x: Double) :Double = if (x < 0) -x else x
 
   def sqrtIter(guess: Double, x: Double) : Double =
     if(isGoodEnough(guess, x)) guess
@@ -13,7 +13,7 @@ object sqrt{
   def improve(guess: Double, x: Double): Double =
     (guess + x / guess) / 2
 
-  def sqrt(x: Double) = sqrtIter(1.0, x)
+  def sqrt(x: Double) :Double = sqrtIter(1.0, x)
 
   def main(args: Array[String]) {
     print(sqrt(4))
